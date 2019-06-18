@@ -3,7 +3,8 @@ using System.Text;
 using System.Xml.Serialization;
 using System.IO;
 
-namespace Utilities {
+namespace Utilities
+{
     public class SerializationHelper
     {
         public static string SerializeToXml<T>(T obj)
@@ -18,11 +19,15 @@ namespace Utilities {
             return strBuilder.ToString();
         }
 
-        public static bool TrySerializeToXml<T>(T obj, out string xml) {
-            try {
+        public static bool TrySerializeToXml<T>(T obj, out string xml)
+        {
+            try
+            {
                 xml = SerializeToXml(obj);
                 return true;
-            } catch (Exception e) {
+            }
+            catch (Exception e)
+            {
                 xml = e.Message;
                 return false;
             }
@@ -35,11 +40,15 @@ namespace Utilities {
             return (T)serializer.Deserialize(reader);
         }
 
-        public static bool TryDeserializeXmlToObject<T>(string source, out T obj) {
-            try {
+        public static bool TryDeserializeXmlToObject<T>(string source, out T obj)
+        {
+            try
+            {
                 obj = DeserializeXmlToObject<T>(source);
                 return true;
-            } catch {
+            }
+            catch
+            {
                 obj = default(T);
                 return false;
             }
