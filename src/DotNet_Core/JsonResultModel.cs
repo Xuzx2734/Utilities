@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Utilities
+namespace System.Web.Mvc
 {
     public class JsonResultModel
     {
